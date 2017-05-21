@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DaggerActivityComponent.create().inject(this);
+        DaggerAppComponent.create().inject(this);
+        DaggerRepositoryComponent.create().inject(this);
 
         String huga = useCase.doSomething("hoge");
         TextView textView = (TextView) findViewById(R.id.message);
